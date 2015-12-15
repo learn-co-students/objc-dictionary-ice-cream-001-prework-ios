@@ -38,7 +38,18 @@
 
 - (NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName
 {
-    return nil;
+    NSMutableDictionary *countsByType = [[NSMutableDictionary alloc] init];
+    
+    for (NSString *name in iceCreamByName) {
+        NSString *iceCream = iceCreamByName[name];
+        if (![countsByType objectForKey:iceCream]) {
+            countsByType[iceCream] = @1;
+        } else {
+            countsByType[iceCream] = @([countsByType[iceCream] integerValue] + 1);
+        }
+    }
+    
+    return countsByType;
 }
 
 @end
