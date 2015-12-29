@@ -16,4 +16,29 @@
  
  */
 
+
+-(NSArray *)namesForIceCream:(NSString *)iceCream {
+    NSDictionary *marksNotes = @{@"Joe"     : @"Peanut Butter and Chocolate",
+                                 @"Tim"     : @"Natural Vanilla"            ,
+                                 @"Sophie"  : @"Mexican Chocolate"          ,
+                                 @"Deniz"   : @"Natural Vanilla"            ,
+                                 @"Tom"     : @"Mexican Chocolate"          ,
+                                 @"Jim"     : @"Natural Vanilla"            ,
+                                 @"Mark"    : @"Cookies 'n Cream"           };
+    
+    NSArray *names = [marksNotes allKeysForObject:iceCream];
+    
+    return names;
+}
+
+-(NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName {
+    NSMutableDictionary *iceCreamCount = [@{} mutableCopy];
+    
+    for (NSString *iceCream in [iceCreamByName allValues]) {
+        NSUInteger numPeople = [[self namesForIceCream:iceCream] count];
+        iceCreamCount[iceCream] = @(numPeople);
+    }
+    return iceCreamCount;
+}
+
 @end
