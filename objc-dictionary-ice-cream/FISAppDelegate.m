@@ -10,10 +10,14 @@
     return YES;
 }
 
-/**
- 
- * Write your custom method bodies here.
- 
- */
+- (NSArray *)namesForIceCream:(NSString *)iceCream {
+    
+    return nil;
+}
+
+- (NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName {
+    
+    return nil;
+}
 
 @end
