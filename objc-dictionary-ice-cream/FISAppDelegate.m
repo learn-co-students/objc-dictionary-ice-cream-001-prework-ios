@@ -30,7 +30,13 @@
 
 - (NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName {
     
-    return nil;
+    NSMutableDictionary *counts = [NSMutableDictionary dictionary];
+    for (NSString *iceCream in [iceCreamByName allValues]) {
+        if (![[counts allKeys] containsObject:iceCream]) {
+            [counts setObject:@([[self namesForIceCream:iceCream] count]) forKey:iceCream];
+        }
+    }
+    return counts;
 }
 
 @end
