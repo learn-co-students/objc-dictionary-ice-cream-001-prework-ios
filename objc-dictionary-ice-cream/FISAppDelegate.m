@@ -12,6 +12,7 @@
 
 - (NSArray *)namesForIceCream:(NSString *)iceCream {
     
+    NSMutableArray *names = [NSMutableArray array];
     NSDictionary *preferredIceCreamFlavors = @{@"Joe" : @"Peanut Butter and Chocolate",
                                                @"Tim" : @"Natural Vanilla",
                                                @"Sophie" : @"Mexican Chocolate",
@@ -19,7 +20,12 @@
                                                @"Tom" : @"Mexican Chocolate",
                                                @"Jim" : @"Natural Vanilla",
                                                @"Mark" : @"Cookies 'n Cream"};
-    return nil;
+    for (NSString *name in [preferredIceCreamFlavors allKeys]) {
+        if ([preferredIceCreamFlavors[name] isEqualToString:iceCream]) {
+            [names addObject:name];
+        }
+    }
+    return names;
 }
 
 - (NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName {
