@@ -6,11 +6,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-/**
- 
- * Write your custom method names here.
- 
- */
+-(NSArray *) namesForIceCream: (NSString *) icecream;
+
+-(NSDictionary *) countsOfIceCream: (NSDictionary *) iceCreamByName;
 
 @end
 
