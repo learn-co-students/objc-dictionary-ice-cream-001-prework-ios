@@ -20,15 +20,7 @@ Mark — Cookies 'n Cream duh
 
 ## Instructions
 
-1. Open the `*.xcworkspace` file and *without* looking at the tests just yet, navigate to the `FISAppDelegate.h` header file and declare two methods:
-  * `namesForIceCream:` which takes an `NSString` argument `iceCream` and returns an `NSArray` object.
-  * `countsOfIceCream:` which takes an `NSDictionary` argument `iceCreamByName` and returns an `NSDictionary` object.
 
-2. In the `FISAppDelegate.m` implementation file, use autocomplete to define the method bodies to return `nil`. At the start of the `namesForIceCream:` method, translate Mark's notes into an `NSDictionary` with each name as a key with that person's preferred ice cream flavor as the associated value. 
-
-3. When you're done, check your work by looking at the `iceCreamByName` dictionary in the `FISAppDelegateSpec` test file. Your dictionary's key-value pairs should match it exactly, but don't just copy/paste it—really try to compose the dictionary yourself. Run the tests now to see that they fail.
-
-4. Finish the `namesForIceCream:` method body to return an array of the names of everyone who likes the ice cream flavor submitted in the string argument. For example, "Mexican Chocolate" should return an array with "Sophie" and "Tom".
 
 5. Write the `countsOfIceCream` body which returns a dictionary of the number (value) of people who like each flavor of ice cream (key). Look at the `countsByIceCream` dictionary in the `FISAppDelegateSpec` file to better understand what the test is expecting.  
   **Hint:** *Try using the* `namesForIceCream:` *method that you just wrote to get a list of names for each ice cream flavor by calling it on* `self`. *This method returns an array of names which you can then count. Remember that you have to convert integer values to* `NSNumber` *in order to store them in a collection.*

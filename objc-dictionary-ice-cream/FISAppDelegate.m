@@ -9,9 +9,9 @@
     // Override point for customization after application launch.
     return YES;
 }
+
 -(NSArray *)namesForIceCream:(NSString *)iceCream{
-    NSMutableArray *fanOfTheFlavor = [[NSMutableArray alloc] init];
-    NSMutableDictionary *nameAndIceCream =
+    NSDictionary *nameAndIceCream =
   @{    @"Joe"      :   @"Peanut Butter and Chocolate"  ,
         @"Tim"      :   @"Natural Vanilla"              ,
         @"Sophie"   :   @"Mexican Chocolate"            ,
@@ -19,30 +19,23 @@
         @"Tom"      :   @"Mexican Chocolate"            ,
         @"Jim"      :   @"Natural Vanilla"              ,
         @"Mark"     :   @"Cookies 'n Cream"            };
-    
-    if ([ [nameAndIceCream allKeys] containsObject:@"Peanut Butter and Chocolate"]) {
-        [fanOfTheFlavor addObject: (@"%@", nameAndIceCream[@"Peanut Butter and Chocolate"])];
-         return fanOfTheFlavor;
-         }
-         
-    else if ([ [nameAndIceCream allKeys] containsObject:@"Mexican Chocolate"]) {
-        [fanOfTheFlavor addObject: (@"%@", nameAndIceCream[@"Mexican Chocolate"])];
-         return fanOfTheFlavor;
-         }
-    else if ([ [nameAndIceCream allKeys] containsObject:@"Natural Vanilla"]) {
-        [fanOfTheFlavor addObject: (@"%@", nameAndIceCream[@"Natural Vanilla"])];
-        return fanOfTheFlavor;
+    NSMutableArray *fanOfTheFlavor = [[NSMutableArray alloc] init];
+        for (NSString *name in nameAndIceCream) {
+        fanOfTheFlavor = [nameAndIceCream allKeysForObject: iceCream];
     }
-    else if ([ [nameAndIceCream allKeys] containsObject:@"Cookies 'n Cream"]) {
-        [fanOfTheFlavor addObject: (@"%@", nameAndIceCream[@"Cookies 'n Cream"])];
         return fanOfTheFlavor;
-    }
-    return nil;
 }
+
 -(NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName{
-    
-    
-    return nil;
+    NSMutableDictionary *countsOfIceCream = [[NSMutableDictionary alloc] init];
+    for (NSString *key in iceCreamByName){
+        NSString *iceCream = iceCreamByName[key];
+        //using the method we created before to separate the dictionary and give us somehting that is countable.
+        NSArray *names = [self namesForIceCream:iceCream];
+        countsOfIceCream[iceCream] = [NSNumber numberWithInteger:names.count];
+    }
+    return [NSDictionary dictionaryWithDictionary: countsOfIceCream];
 }
+
 
 @end
