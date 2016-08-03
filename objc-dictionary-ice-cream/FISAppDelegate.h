@@ -12,5 +12,7 @@
  
  */
 
+-(NSArray *)namesForIceCream:(NSString *)iceCream;
+
 @end
 
