@@ -7,6 +7,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 
@@ -24,7 +25,27 @@
                                      @"Tom"     :   @"Mexican Chocolate"            ,
                                      @"Jim"     :   @"Natural Vanilla"              ,
                                      @"Mark"    :   @"Cookies 'n Cream"            };
-    return nil;
+    
+    NSMutableArray *peopleWhoLikesThisFlavor = [[NSMutableArray alloc] init];
+    
+    for (NSString *nameOfPerson in [iceCreamParty allKeys]) {
+        if ([iceCream isEqualToString:iceCreamParty[nameOfPerson]]) {
+            [peopleWhoLikesThisFlavor addObject:nameOfPerson];
+        }
+    }
+    return peopleWhoLikesThisFlavor;
+}
+
+-(NSDictionary *)countsOfIceCream:(NSDictionary *)iceCreamByName {
+    NSMutableDictionary *flavorPreferences = [[NSMutableDictionary alloc] init];
+    
+    for (NSString *flavorName in [iceCreamByName allValues]) {
+        NSArray *nameOfFlavors = [self namesForIceCream:flavorName];
+        
+        NSUInteger flavorCount = [nameOfFlavors count];
+        flavorPreferences[flavorName] = @(flavorCount);
+    }
+    return flavorPreferences;
 }
 
 @end
