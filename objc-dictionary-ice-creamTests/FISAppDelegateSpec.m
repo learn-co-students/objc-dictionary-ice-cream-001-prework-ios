@@ -43,13 +43,11 @@ describe(@"FISAppDelegate", ^{
         
         it(@"returns an array containing 'Sophie' and 'Tom' when 'Mexican Chocolate' is submitted as the argument", ^{
             NSArray *result = [appDelegate namesForIceCream:@"Mexican Chocolate"];
-            
             expect(result).to.equalInAnyOrder(@[ @"Sophie", @"Tom" ]);
         });
         
         it(@"returns an array containing 'Deniz', 'Tim', and 'Jim' when 'Natural Vanilla' is submitted as the argument", ^{
             NSArray *result = [appDelegate namesForIceCream:@"Natural Vanilla"];
-            
             expect(result).to.equalInAnyOrder(@[ @"Deniz", @"Tim", @"Jim" ]);
         });
     });
