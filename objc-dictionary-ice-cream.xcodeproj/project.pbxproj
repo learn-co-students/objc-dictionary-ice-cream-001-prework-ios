@@ -88,8 +88,8 @@
 				4D6BCA471B4B0BD800D98A01 /* FISAppDelegate.h */,
 				4D6BCA481B4B0BD800D98A01 /* FISAppDelegate.m */,
 				4D6BCA4D1B4B0BD800D98A01 /* Main.storyboard */,
-				4D6BCA501B4B0BD800D98A01 /* Images.xcassets */,
 				4D6BCA521B4B0BD800D98A01 /* LaunchScreen.xib */,
+				4D6BCA501B4B0BD800D98A01 /* Images.xcassets */,
 				4D6BCA431B4B0BD800D98A01 /* Supporting Files */,
 			);
 			path = "objc-dictionary-ice-cream";
